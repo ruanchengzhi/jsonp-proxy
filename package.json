@@ -1,0 +1,28 @@
+{
+  "name": "jsonp-proxy",
+  "version": "1.0.0",
+  "description": "Convert json output into jsonp output",
+  "main": "app.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/fakechris/jsonp-proxy"
+  },
+  "keywords": [
+    "proxy",
+    "jsonp"
+  ],
+  "author": "Chris Song",
+  "license": "MIT",
+  "dependencies": {
+    "http-proxy": "*",
+    "connect": "*"
+  },
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/fakechris/jsonp-proxy/issues"
+  },
+  "homepage": "https://github.com/fakechris/jsonp-proxy"
+}
