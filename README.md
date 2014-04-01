@@ -24,6 +24,9 @@ All settings are placed in /config.js, hack it as you go.
 ### Proxy Settings
 
 - ``proxy_url``: *The url proxy to*
+- ``replaceHostname``: *Is replace hostname to proxy hostname?*
+- ``replaceHeaders``: *Replace specific http request header*
+- ``listen_port``: *The port proxy server listened to*
 
 License
 =======
