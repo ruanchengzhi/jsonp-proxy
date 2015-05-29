@@ -20,21 +20,22 @@ var proxy = httpProxy.createProxyServer({
 });
 
 config.hostname = url.parse(config.proxy_url).hostname;
-
-run();
-
-function run() {
-  connect.createServer(
+  console.log('hostname = ' + config.hostname);
+var app = connect ()
+.use(
     function(req, res, next) {
       var _write = res.write;
       var _req = req;
       res.write = function(data) {
         //debugger;
-        var callback_name = querystring.parse(url.parse(req.url).query)._callback || "_cb"
+      
+        var callback_name = querystring.parse(url.parse(_req.url).query)._callback || "_cb";
         _write.call(res, callback_name + "(" + data.toString() + ");");
+        
       }
       next();
-    },
+    })
+.use(
     function(req, res) {
       // modify req host header
       if (config.replaceHostname) {
@@ -48,7 +49,9 @@ function run() {
         console.log('error '+ e);
       });        
     }
-  ).listen(config.listen_port);
-  console.log('Server listening on ' + config.listen_port);
-}
+  )
+.listen(config.listen_port);
+
+console.log('Server listening on ' + config.listen_port);
+
 

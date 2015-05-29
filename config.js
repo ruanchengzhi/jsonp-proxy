@@ -2,7 +2,7 @@ module.exports =  {
     // proxied url
     proxy_url: "http://ip.taobao.com",
 
-    replaceHostname: false,
+    replaceHostname: true,
 
     replaceHeaders: {'accept-encoding': 'plaintext'},
 
